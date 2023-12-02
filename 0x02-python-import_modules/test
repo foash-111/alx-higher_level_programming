@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# for i in {1..6}
+# 	do
+# 	echo "welcome $i times"
+# 	done
+
+read -p "enter stating number : " $snum
+read -p "enter ending number : " $enum
+
+while [ $snum -lt $enum ] || [ $snum -eq $enum ]
+do
+echo $snum
+snum = $(expr $snum + 1)
+done
