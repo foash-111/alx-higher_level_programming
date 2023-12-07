@@ -10,3 +10,5 @@ def search_replace(my_list, search, replace):
                 new_list.append(i)
             count += 1
         return new_list
+    else:
+        return my_list
