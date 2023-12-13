@@ -26,11 +26,11 @@ def roman_to_int(roman_string):
             elif i == "M":
                 i = 1000
             else:
-                return None
+                return 0
             sum += i
             if (i > temp):
                 sum -= (temp * 2)
             temp = i
         return sum
     else:
-        return None
+        return 0
