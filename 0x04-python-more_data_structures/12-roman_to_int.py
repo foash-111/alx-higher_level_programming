@@ -6,7 +6,7 @@
 def roman_to_int(roman_string):
     sum = 0
     temp = 0
-    
+
     # The isinstance() function in Python is used to
     # check if an object or variable
     # is an instance of a particular class or type.
@@ -15,9 +15,11 @@ def roman_to_int(roman_string):
     # will return True. If roman_string is not a string
     # (for example, if it's an integer, a list, or None),
     # isinstance(roman_string, str) will return False.
+
+    # 246 = CC + XL + VI = CCXLVI.
+    # 789 = DCC + LXXX + IX = DCCLXXXIX.
+
     if isinstance(roman_string, str):
-        # 246 = CC + XL + VI = CCXLVI.
-        # 789 = DCC + LXXX + IX = DCCLXXXIX.
         for i in roman_string:
             if i == "I":
                 i = 1
