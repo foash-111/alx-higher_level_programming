@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-#I	V	X	L	C	D	M
-#1	5	10	50	100	500	1000
+
+# I	V	X	L	C	D	M
+# 1	5	10	50	100	500	1000
 
 def roman_to_int(roman_string):
     sum = 0
     temp = 0
-    #246 = CC + XL + VI = CCXLVI.
-    #789 = DCC + LXXX + IX = DCCLXXXIX.
+
     if (roman_string):
+        # 246 = CC + XL + VI = CCXLVI.
+        # 789 = DCC + LXXX + IX = DCCLXXXIX.
         for i in roman_string:
             if i == "I":
                 i = 1
