@@ -2,5 +2,5 @@
 def raise_exception_msg(message=""):
     try:
         raise NameError(" erorrrr")
-    except:
+    except NameError:
         print(message)
