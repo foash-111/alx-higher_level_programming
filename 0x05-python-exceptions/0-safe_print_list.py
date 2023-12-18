@@ -7,5 +7,5 @@ def safe_print_list(my_list=[], x=0):
             counter += 1
         except (IndexError, TypeError):
             break
-    print("")
+    print()
     return counter
