@@ -26,8 +26,8 @@ class Square:
         elif self.position[0] < 0 or self.position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.__size = value
-            return self.__size
+            self.__position = value
+            return self.__position
 
     def area(self):
         return self.__size * self.__size
