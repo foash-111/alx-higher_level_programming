@@ -11,7 +11,7 @@ print("--")
 my_rectangle_2 = Rectangle(2, 1)
 print(my_rectangle_2)
 print("--")
-Rectangle.print_symbol = "C"
+Rectangle.print_symbol = "b"
 print(my_rectangle_2)
 print("--")
 
