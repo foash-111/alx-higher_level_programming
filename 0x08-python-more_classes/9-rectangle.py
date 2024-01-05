@@ -24,18 +24,18 @@ class Rectangle:
     def width(self, value):
         if isinstance(value, int) and value >= 0:
             self.__width = value
-        elif value < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
-        else:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
 
     @height.setter
     def height(self, value):
         if isinstance(value, int) and value >= 0:
             self.__height = value
-        elif value < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
-        else:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
 
     def area(self):
@@ -78,9 +78,4 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            return cls(size, size)
+        return cls(size, size)
