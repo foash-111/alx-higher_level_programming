@@ -1,6 +1,15 @@
 #!/usr/bin/python3
+"""
+matrix division
+
+return new matrix
+"""
+
 
 def matrix_divided(matrix, div):
+    """
+    matrix division for each element
+    """
     if div == 0:
         raise ZeroDivisionError("division by zero")
     new_list = []
