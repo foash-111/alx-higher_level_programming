@@ -21,8 +21,15 @@ class BaseGeometry:
             raise ValueError("{} must be greater than 0".format(name))
 
 
+"""
+class Rectangle that inherits from BaseGeometry
+
+with method init for width, height
+"""
+
+
 class Rectangle(BaseGeometry):
-    """Rectangle that inherits from BaseGeometry"""
+    """class Rectangle that inherits from BaseGeometry"""
     def __init__(self, width, height):
         self.__width = width
         self.__height = height
