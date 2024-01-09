@@ -8,7 +8,7 @@ MyInt is a rebel. MyInt has == and != operators inverted
 
 
 class MyInt(int):
-
+    """MyInt is a rebel. MyInt has == and != operators inverted"""
     def __init__(self, num):
         self.num = num
         super().__init__()
