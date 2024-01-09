@@ -41,8 +41,18 @@ class Rectangle(BaseGeometry):
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
 
 
+"""
+class Square that inherits from Rectangle
+
+with method init for size
+inhert area method from rectangle
+"""
+
+
 class Square(Rectangle):
+    """class Square that inherits from Rectangle"""
     def __init__(self, size):
+        """initiation method , validate size, get area"""
         self.__size = size
         self.integer_validator("size", size)
         super().__init__(size, size)
