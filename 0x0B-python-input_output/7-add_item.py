@@ -1,5 +1,13 @@
 #!/usr/bin/python3
 
+"""
+check if the file is exist
+
+read from command line ..
+store at a file
+"""
+
+
 from sys import argv
 
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
