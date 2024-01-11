@@ -9,6 +9,11 @@ import json
 
 def load_from_json_file(filename):
     """function that comebacks the JSON representation as object from file"""
-    with open(filename, "r") as file:
-        my_object = json.load(file)
-        return my_object
+    try:
+        with open(filename, "r") as file:
+            my_object = json.load(file)
+            return my_object
+    except FileNotFoundError:
+        return None
+
+        
