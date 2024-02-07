@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+"""Unittest for max_integer([..])
+"""
+import unittest
+from six_max_integer import max_integer  # Adjust the import according to your module structure
+
+class TestMaxInteger(unittest.TestCase):
+    def test_max_integer_empty_list(self):
+        self.assertIsNone(max_integer([]))
+
+    def test_max_integer_single_element(self):
+        self.assertEqual(max_integer([5]),  5)
+
+    def test_max_integer_multiple_elements(self):
+        self.assertEqual(max_integer([1,  2,  3,  4]),  4)
+
+    def test_max_integer_negative_numbers(self):
+        self.assertEqual(max_integer([-1, -2, -3,  4]),  4)
+
+    def test_max_integer_non_integer_values(self):
+        with self.assertRaises(ValueError):
+            max_integer([1, "two",  3])
+
+if __name__ == '__main__':
+    unittest.main()
