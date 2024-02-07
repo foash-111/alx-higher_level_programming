@@ -3,7 +3,7 @@
 
 
 import unittest
-max_integer = import('6-max_integer').max_integer
+max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
     """
@@ -128,4 +128,58 @@ class TestMaxInteger(unittest.TestCase):
         """Test for list of characters
         """
         test_list = ['a', 'c', 'd', 'v']
-        self.assertEqual(max_integer(test_list))
+        self.assertEqual(max_integer(test_list), 'v')
+
+    def test_numbers_character(self):
+        """Test for a list of numbers and character/s
+        """
+        test_list1 = [1, 2, 3, 's']
+        test_list2 = [-1, -2, -3, 's']
+        test_list3 = [1.1, 2.2, 3.3, 's']
+        test_list4 = [-1.1, 2.2, -3.3, 's']
+
+        with self.assertRaises(TypeError):
+            max_integer(test_list1)
+        with self.assertRaises(TypeError):
+            max_integer(test_list2)
+        with self.assertRaises(TypeError):
+            max_integer(test_list3)
+        with self.assertRaises(TypeError):
+            max_integer(test_list4)
+
+    def test_mixed_characters(self):
+        """Test for a mixture of characters in list including +ve and -ve
+        """
+        test_list1 = ['-a', '-d', '-k', '-w']
+        test_list2 = ['-a', '-d', 'k', '-w']
+        test_list3 = ['-a', 'z', 'k', '-w']
+
+        self.assertEqual(max_integer(test_list1), '-w')
+        self.assertEqual(max_integer(test_list2), 'k')
+        self.assertEqual(max_integer(test_list3), 'z')
+
+    def test_mixed_list(self):
+        """Test for a list containing various types
+        """
+        test_list1 = [1, "87", 3, "hot", -3, [78], {87}, '-z', 'a']
+
+        with self.assertRaises(TypeError):
+            max_integer(test_list1)
+
+    def test_float_numbers(self):
+        """Test for float numbers in a list including +ve and -ve
+        """
+        test_list1 = [9.1, 2.3, 6.8, 0.1]
+        test_list2 = [9, 2, 6.8, 0.1]
+        test_list3 = [-9.1, -2.3, 6.8, 0.1]
+        test_list4 = [-9, -2, -6.8, -0.1]
+        test_list5 = [-9, -2, -6.8, 0.1]
+
+        self.assertEqual(max_integer(test_list1), 9.1)
+        self.assertEqual(max_integer(test_list2), 9)
+        self.assertEqual(max_integer(test_list3), 6.8)
+        self.assertEqual(max_integer(test_list4), -0.1)
+        self.assertEqual(max_integer(test_list5), 0.1)
+
+if __name__ == '__main__':
+    unittest.main()
