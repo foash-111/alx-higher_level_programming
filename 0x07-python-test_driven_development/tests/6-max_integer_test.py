@@ -3,9 +3,12 @@
 """
 import unittest
 
-from max_file import max_integer
+max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
+    """
+    doc
+    """
     def test_max_integer_empty_list(self):
         """doc"""
         self.assertIsNone(max_integer([]))
