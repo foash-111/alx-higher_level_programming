@@ -11,7 +11,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertIsNone(max_integer([]))
 
     def test_max_integer_single_element(self):
-            """doc"""
+        """doc"""
         self.assertEqual(max_integer([5]),  5)
 
     def test_max_integer_multiple_elements(self):
