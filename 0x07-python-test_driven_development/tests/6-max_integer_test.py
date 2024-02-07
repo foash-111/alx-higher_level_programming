@@ -128,4 +128,4 @@ class TestMaxInteger(unittest.TestCase):
         """Test for list of characters
         """
         test_list = ['a', 'c', 'd', 'v']
-        self.assertEqual(max_integer(test_list)
+        self.assertEqual(max_integer(test_list))
