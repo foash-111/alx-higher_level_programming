@@ -7,6 +7,7 @@ return nothing
 
 
 def print_square(size):
+    """print a square with #"""
     if (isinstance(size, float) and size < 0) or not\
             isinstance(size, int):
         raise TypeError("size must be an integer")
