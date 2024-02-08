@@ -8,7 +8,7 @@ return nothing
 
 def print_square(size):
     """print a square with #"""
-    if size == None:
+    if size is None:
         raise TypeError("size isn't existed")
     if (isinstance(size, float) and size < 0) or not\
             isinstance(size, int):
