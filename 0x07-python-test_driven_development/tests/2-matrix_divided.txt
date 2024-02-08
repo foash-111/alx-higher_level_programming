@@ -48,7 +48,7 @@ TypeError: missing two arguments
 # div updated to 10
 >>> matrix = [[5, 6, 3], [4, 5, 2]]
 >>> matrix_divided(matrix, float('inf'))
-[[0.5, 0.6, 0.3], [0.4, 0.5, 0.2]]
+[[0.50, 0.60, 0.30], [0.40, 0.50, 0.20]]
 
 #nan -> not a number
 >>> matrix = [[5, 6, 3], [4, 5, 2]]
