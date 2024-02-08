@@ -22,4 +22,4 @@ TypeError: last_name must be a string
 >>> say_my_name(None)
 Traceback (most recent call last):
 ...
-TypeError: there is no arguments passed
+TypeError: first_name must be a string
