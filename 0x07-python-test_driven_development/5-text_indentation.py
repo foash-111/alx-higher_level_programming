@@ -12,6 +12,6 @@ def text_indentation(text):
     current = 0
     for value in (text):
         print(value, end="")
-        if value in {'.', ';', '?', ':'}:
+        if value in {'.', '?', ':'}:
             print()
             print()
