@@ -7,6 +7,7 @@ return Nothing
 
 #hello.
 def text_indentation(text):
+    """print \n\n after . , ?"""
     length = 0
     current = 0
     for value in (text):
