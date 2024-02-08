@@ -10,31 +10,31 @@ stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
 cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
 beatiorem! Iam ruinas videres""")
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
+<BLANK LINE>
 Quonam modo?
-
+<BLANK LINE>
 Utrum igitur tibi litteram videor an totas paginas commovere?
-
+<BLANK LINE>
 Non autem hoc:
-
+<BLANK LINE>
 igitur ne illud quidem.
-
+<BLANK LINE>
 Fortasse id optimum, sed ubi illud:
-
+<BLANK LINE>
 Plus semper voluptatis?
-
+<BLANK LINE>
 Teneo, inquit, finem illi videri nihil dolere.
-
+<BLANK LINE>
 Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
-
+<BLANK LINE>
 Si id dicis, vicimus.
-
+<BLANK LINE>
 Inde sermone vario sex illa a Dipylo stadia confecimus.
-
+<BLANK LINE>
 Sin aliud quid voles, postea.
-
+<BLANK LINE>
 Quae animi affectio suum cuique tribuens atque hanc, quam dico.
-
+<BLANK LINE>
 >>> text_indentation(5)
 Traceback (most recent call last):
 ...
