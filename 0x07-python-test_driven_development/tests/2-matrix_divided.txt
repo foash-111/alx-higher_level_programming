@@ -43,3 +43,13 @@ TypeError: missing second argument
 Traceback (most recent call last):
 ...
 TypeError: missing two arguments
+# inf -> infinity
+>>> matrix_divided(matrix, float('inf'))
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+#nan -> not a number
+>>> matrix_divided(matrix, float('nan'))
+Traceback (most recent call last):
+...
+TypeError: div must be a number
