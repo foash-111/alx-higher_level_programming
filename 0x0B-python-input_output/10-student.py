@@ -21,7 +21,3 @@ class Student:
                     value = self.__dict__.get(key)
                     my_dict[key] = value
         return my_dict
-
-
-
-        
