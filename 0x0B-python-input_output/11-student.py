@@ -26,7 +26,7 @@ class Student:
         """json is considered as dict we need to update it's values.
         we have keys, it's like the keys of our instance.
         """
-        for key in self.__dict__.keys():
-            value = self.__dict__.get(key)
-            json[key] = value
-        return json
+        for key in json.keys():
+            value = json.get(key)
+            self.__dict__[key] = value
+        return self.__dict__
