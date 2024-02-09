@@ -12,29 +12,29 @@ class Rectangle(Base):
             self.__width = width
         else:
             raise TypeError("width must be an integer")
-        if width < 0:
+        if width <= 0:
             raise ValueError("width must be > 0")
 
         if type(height) is int:
             self.__height = height
         else:
-            raise TypeError(" must be an integer")
-        if height < 0:
-            raise ValueError(" must be > 0")
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
 
         if type(x) is int:
             self.__x = x
         else:
             raise TypeError("x must be an integer")
         if x < 0:
-            raise ValueError("x must be > 0")
+            raise ValueError("x must be >= 0")
 
         if type(y) is int:
             self.__y = y
         else:
             raise TypeError("y must be an integer")
         if y < 0:
-            raise ValueError("y must be > 0")
+            raise ValueError("y must be >= 0")
         Base.__init__(self, id)
 
     @property
@@ -47,7 +47,7 @@ class Rectangle(Base):
             self.__width = value
         else:
             raise TypeError("width must be an integer")
-        if value < 0:
+        if value <= 0:
             raise ValueError("width must be > 0")
 
     @property
@@ -59,9 +59,9 @@ class Rectangle(Base):
         if type(value) is int:
             self.__ = value
         else:
-            raise TypeError(" must be an integer")
-        if value < 0:
-            raise ValueError(" must be > 0")
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
 
     @property
     def x(self):
@@ -74,7 +74,7 @@ class Rectangle(Base):
         else:
             raise TypeError("x must be an integer")
         if value < 0:
-            raise ValueError("x must be > 0")
+            raise ValueError("x must be >= 0")
 
     @property
     def y(self):
@@ -87,4 +87,4 @@ class Rectangle(Base):
         else:
             raise TypeError("y must be an integer")
         if value < 0:
-            raise ValueError("y must be > 0")
+            raise ValueError("y must be >= 0")
