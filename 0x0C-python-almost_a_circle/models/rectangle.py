@@ -111,7 +111,7 @@ class Rectangle(Base):
         the number of arguments passed"""
         attributes = ("id", "width", "height", "x", "y")
 
-        if len(args) > 0:
+        if args:
             for attr, value in zip(attributes, args):
                 """args considered as tuple"""
                 """setattr: set attribute <- value  of its instance
