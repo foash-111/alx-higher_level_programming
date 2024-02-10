@@ -111,12 +111,12 @@ class Rectangle(Base):
         the number of arguments passed"""
         attributes = ("id", "width", "height", "x", "y")
 
-        for attr, value in zip(attributes, args):
-            """args considered as tuple"""
-            setattr(self, attr, value)
-
-        if len(args > 0):
-            pass
+        if len(args) > 0:
+            for attr, value in zip(attributes, args):
+                """args considered as tuple"""
+                """setattr: set attribute <- value  of its instance
+                and creat attribute if it doesn't exist"""
+                setattr(self, attr, value)
         else:
             """kwargs considered as dic
             with key=value pair passed to the class when we creat instance"""
