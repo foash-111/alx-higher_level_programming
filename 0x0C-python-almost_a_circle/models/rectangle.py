@@ -106,10 +106,13 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}"\
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update my arguments in order considered
         the number of arguments passed"""
         attributes = ("id", "width", "height", "x", "y")
 
         for attr, value in zip(attributes, args):
             setattr(self, attr, value)
+
+        for key,cntt in kwargs.items():
+            self.__dict__[key] = cntt
