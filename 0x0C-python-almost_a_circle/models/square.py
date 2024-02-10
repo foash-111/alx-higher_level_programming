@@ -30,3 +30,15 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
+
+    def update(self, *args, **kwargs):
+        """update args--> tuple"""
+        """update kwargs --> dictionary if args doesn't found"""
+
+        if args:
+            attributes = ("id", "size", "x", "y")
+            for key, value in zip(attributes, args):
+                setattr(self, key, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
