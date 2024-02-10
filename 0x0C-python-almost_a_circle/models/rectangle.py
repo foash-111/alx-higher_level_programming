@@ -115,7 +115,9 @@ class Rectangle(Base):
             """args considered as tuple"""
             setattr(self, attr, value)
 
-        if len(args == 0):
+        if len(args > 0):
+            pass
+        else:
             """kwargs considered as dic
             with key=value pair passed to the class when we creat instance"""
             for key, cntt in kwargs.items():
