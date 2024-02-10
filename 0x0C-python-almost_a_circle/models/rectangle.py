@@ -122,3 +122,6 @@ class Rectangle(Base):
             with key=value pair passed to the class when we creat instance"""
             for key, content in kwargs.items():
                 setattr(self, key, content)
+
+    def to_dictionary(self):
+        return self.__dict__
