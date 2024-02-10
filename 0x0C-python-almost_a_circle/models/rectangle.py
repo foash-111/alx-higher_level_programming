@@ -114,7 +114,8 @@ class Rectangle(Base):
         for attr, value in zip(attributes, args):
             """args considered as tuple"""
             setattr(self, attr, value)
-        if len(args > 0):
+
+        if len(args == 0):
             """kwargs considered as dic
             with key=value pair passed to the class when we creat instance"""
             for key, cntt in kwargs.items():
