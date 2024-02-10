@@ -120,5 +120,5 @@ class Rectangle(Base):
         else:
             """kwargs considered as dic
             with key=value pair passed to the class when we creat instance"""
-            for key, cntt in kwargs.items():
-                self.__dict__[key] = cntt
+            for key, content in kwargs.items():
+                setattr(self, key, content)
