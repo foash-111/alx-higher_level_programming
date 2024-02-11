@@ -88,6 +88,7 @@ class Base:
 
         with open(f"{cls.__name__}.csv", "w") as file:
             file.write(my_string)
+
     @classmethod
     def load_from_file_csv(cls):
         """print instances that exist in a file"""
