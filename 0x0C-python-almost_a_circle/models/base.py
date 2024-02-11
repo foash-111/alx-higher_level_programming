@@ -50,6 +50,27 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
+        """creat an instant like r1 = rectangle(10,,,etc)"""
         dummy = cls(**dictionary)
+        """validate it's attributes by update"""
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """print instances that exist in a file"""
+        # open a file
+        my_list = []
+        try:
+            with open(f"{cls.__name__}.json", "r") as file:
+                my_string = file.read()
+        except FileNotFoundError:
+            return []
+        # load the list of dicts from the file
+        list_of_dicts = cls.from_json_string(my_string)
+        # for each dict creat an instance with it's attributes
+        # and append each instance for a list
+        for dic in list_of_dicts:
+            my_list.append(cls.create(**dic))
+        # return list
+        return my_list
