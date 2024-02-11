@@ -74,3 +74,35 @@ class Base:
             my_list.append(cls.create(**dic))
         # return list
         return my_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save each objects' dict to a file """
+        if list_objs is None:
+            my_string = "[]"
+        else:
+            my_list = []
+            for i in list_objs:
+                my_list.append(i.to_dictionary())
+            my_string = cls.to_json_string(my_list)
+
+        with open(f"{cls.__name__}.csv", "w") as file:
+            file.write(my_string)
+    @classmethod
+    def load_from_file_csv(cls):
+        """print instances that exist in a file"""
+        # open a file
+        my_list = []
+        try:
+            with open(f"{cls.__name__}.csv", "r") as file:
+                my_string = file.read()
+        except FileNotFoundError:
+            return []
+        # load the list of dicts from the file
+        list_of_dicts = cls.from_json_string(my_string)
+        # for each dict creat an instance with it's attributes
+        # and append each instance for a list
+        for dic in list_of_dicts:
+            my_list.append(cls.create(**dic))
+        # return list
+        return my_list
