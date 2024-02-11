@@ -4,7 +4,7 @@
 import json
 
 
-class Base:
+class Base():
     """my base class"""
     __nb_objects = 0
 
@@ -24,3 +24,12 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        my_list = []
+        for i in list_objs:
+            my_list.append(i.to_dictionary())
+        my_string = cls.to_json_string(my_list)
+        with open(f"{cls}.json", "a") as file:
+            file.write(my_string)
