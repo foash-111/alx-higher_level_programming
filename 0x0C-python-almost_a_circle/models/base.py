@@ -3,8 +3,7 @@
 
 import json
 
-
-class Base():
+class Base:
     """my base class"""
     __nb_objects = 0
 
@@ -28,9 +27,13 @@ class Base():
     @classmethod
     def save_to_file(cls, list_objs):
         """save each objects' dict to a file """
-        my_list = []
-        for i in list_objs:
-            my_list.append(i.to_dictionary())
-        my_string = cls.to_json_string(my_list)
-        with open(f"{cls.__name__}.json", "a") as file:
+        if list_objs is None:
+            my_string = "[]"
+        else:
+            my_list = []
+            for i in list_objs:
+                my_list.append(i.to_dictionary())
+            my_string = cls.to_json_string(my_list)
+
+        with open(f"{cls.__name__}.json", "w") as file:
             file.write(my_string)
