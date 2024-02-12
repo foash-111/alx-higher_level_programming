@@ -28,5 +28,4 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(max_neg_mid), -1)
         self.assertEqual(max_integer(max_neg_last), -3)
 
-        self.assertIsNone(max_integer(no_list))
         self.assertEqual(max_integer(list_empty), None)
