@@ -18,7 +18,7 @@ class TestMaxInteger(unittest.TestCase):
         max_neg_last = [-5, -8, -7, -3]
 
         list_empty = []
-        no_list = None
+        list_one_num = [3]
         
         self.assertEqual(max_integer(max_pov_first), 4)
         self.assertEqual(max_integer(max_pov_mid), 8)
@@ -29,3 +29,4 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(max_neg_last), -3)
 
         self.assertEqual(max_integer(list_empty), None)
+        self.assertEqual(max_integer(list_one_num), 3)
