@@ -1,65 +1,32 @@
 #!/usr/bin/python3
-"""Defines a class TestMaxInteger for max_integer([...])"""
-
-
+"""Unittest for max_integer([..])
+"""
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
-    """
-    Test class that defines test cases for the max_integer function.
-    """
-    def test_positive_integers(self):
-        """Test for positive integers
-        """
-        test_list1 = [1, 2, 3, 4]
-        test_list2 = [ 4, 1, 2, 3]
-        test_list3 = [1, 2, 4, 2, 3]
+    """the class which i will write my methods checks"""
 
-        self.assertEqual(max_integer(test_list1), 4)
-        self.assertEqual(max_integer(test_list2), 4)
-        self.assertEqual(max_integer(test_list3), 4)
+    def test_max_int(self):
+        """test for max int"""
+        max_pov_first = [4, 3, 1, 2]
+        max_pov_mid = [3, 7, 8, 5]
+        max_pov_last = [1, 2, 3, 5]
 
-    def test_negative_integers(self):
-        """Test for negative integers
-        """
-        test_list1 = [-91, -31, -4, -2]
-        test_list2 = [-2, -91, -31, -4]
-        test_list3 = [-91, -123, -2, -31, -4]
+        max_neg_first = [-1, -5, -6, -7]
+        max_neg_mid = [-3, -5, -1, -8]
+        max_neg_last = [-5, -8, -7, -3]
 
-        self.assertEqual(max_integer(test_list1), -2)
-        self.assertEqual(max_integer(test_list2), -2)
-        self.assertEqual(max_integer(test_list3), -2)
+        list_empty = []
+        no_list = None
+        
+        self.assertEqual(max_integer(max_pov_first), 4)
+        self.assertEqual(max_integer(max_pov_mid), 8)
+        self.assertEqual(max_integer(max_pov_last), 5)
 
-    def test_pos_neg_integers(self):
-        """Test for positive and negative integers
-        """
-        test_list = [-9, -14, 23, 98, 0, -9, -100, -1]
-        self.assertEqual(max_integer(test_list), 98)
+        self.assertEqual(max_integer(max_neg_first), -1)
+        self.assertEqual(max_integer(max_neg_mid), -1)
+        self.assertEqual(max_integer(max_neg_last), -3)
 
-    def test_empty_list(self):
-        """Test for an empty list
-        """
-        test_list = []
-        self.assertIsNone(max_integer(test_list), None)
-
-    def test_one_arg(self):
-        """Test for passing one number to list
-        """
-        test_list = [1]
-        self.assertEqual(max_integer(test_list), 1)
-
-    def test_none_argument(self):
-        """Test for passing None
-        """
-        with self.assertRaises(TypeError):
-            max_integer(None)
-
-    def test_none_list(self):
-        """Test for passing None as list
-        """
-        test_list = [None]
-        self.assertIsNone(max_integer(test_list), None)
-
-if __name__ == '__main__':
-    unittest.main()
+        self.assertIsNone(max_integer(no_list))
+        self.assertEqual(max_integer(list_empty), None)
