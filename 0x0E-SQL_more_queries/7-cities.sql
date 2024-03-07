@@ -8,5 +8,5 @@ CREATE TABLE IF NOT EXISTS hbtn_0d_usa.cities
     name VARCHAR(256) NOT NULL,
     state_id INT NOT NULL FOREIGN KEY,
     PRIMARY KEY (id),
-    FOREIGN KEY (state_id) REFERENCES states (id) ON DELETE CASCADE
+    FOREIGN KEY (state_id) REFERENCES states (id)
 );
