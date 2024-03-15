@@ -3,7 +3,7 @@
 const args = process.argv;
 
 function add(a, b) {
-  return (a * b)
+  return (a + b)
 }
 
 if (isNaN(args[2]) === true || isNaN(args[3] === true)) {
