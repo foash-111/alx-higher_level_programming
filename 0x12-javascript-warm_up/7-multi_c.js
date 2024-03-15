@@ -9,5 +9,5 @@ if ((args[2] === undefined) || (isNaN(args[2]) === true)) {
   while (i < args[2]) {
     console.log('C is fun');
     i++;
-}
+  }
 }
