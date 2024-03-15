@@ -1,16 +1,14 @@
 #!/usr/bin/node
 
-
-
 /**
  * fact - return the factorial of any number passed to it
- * @param a 
+ * @param a
  * @returns factorial of a
  */
 
 function fact (a) {
   if (a <= 0) {
-    return ('the factorial of negative numbers is undefined')
+    return ('the factorial of negative numbers is undefined');
   }
   if (a === 1 || a === 0) {
     return (1);
@@ -19,8 +17,7 @@ function fact (a) {
 }
 
 const args = process.argv;
-let x = 1
-let result = 1
+let x = 1;
 
 if (isNaN(args[2]) === true) {
   console.log(x);
