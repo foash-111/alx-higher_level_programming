@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
 exports.converter = function (base) {
-  return func () {
-    mode = base;
-  };
-  return parseInt(num, mode)
+  function display (num) {
+    return num.toString(base); // convert the number to specific base passed to it
+  }
+  return display;
 };

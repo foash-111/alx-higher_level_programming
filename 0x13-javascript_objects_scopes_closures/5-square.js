@@ -8,8 +8,6 @@ class Square extends Rectangle {
   charPrint () {
     if (this.h === undefined) {
       super.print();
-    } else {
-      
     }
   }
 }
