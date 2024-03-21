@@ -22,7 +22,9 @@ class Square extends Rectangle {
       j++;
     }
     }
+
   }
+
 }
 
 module.exports = Square;

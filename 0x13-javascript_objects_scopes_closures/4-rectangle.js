@@ -21,6 +21,7 @@ class Rectangle {
       j++;
     }
   }
+
   rotate () {
     let temp = 0;
     temp = this.height;
