@@ -26,7 +26,8 @@ if __name__ == "__main__":
     my_rows = data_base_delivery.fetchall()
 
     for row in my_rows:
-        print(row)
+        if row[1][0] == "N":
+            print(row)
     
     data_base_delivery.close()
     connection_with_db.close()
