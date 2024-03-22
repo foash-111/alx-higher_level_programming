@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     my_select_query = """
             SELECT * FROM states
-            WHERE name LIKE 'N%'
+            WHERE name LIKE 'n%'
             ORDER BY id ASC;
         """
 
