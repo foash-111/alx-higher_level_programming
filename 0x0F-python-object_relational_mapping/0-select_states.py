@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""my module that link MySQLdb with python"""
+"""my module that link MySQLdb with python without ORM"""
 
 
 import MySQLdb
