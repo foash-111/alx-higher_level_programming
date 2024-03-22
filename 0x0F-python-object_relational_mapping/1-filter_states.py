@@ -16,7 +16,6 @@ if __name__ == "__main__":
         charset="utf8"
     )
     cursor = connection.cursor()
-
     my_select_query = """
             SELECT id, name FROM states
             WHERE name LIKE BINARY 'N%'
