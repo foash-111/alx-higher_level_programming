@@ -2,13 +2,13 @@
 
 """my module that link MySQLdb with python"""
 
-import MySQLdb
-import sys
 
 class Linker:
   """link MySQLdb with python"""
-
+  
   def __init__():
+    import MySQLdb
+    import sys
     args = sys.argv
     conn = MySQLdb.connect(host="localhost", port=3306, user="{}".format(args[1]), passwd="{}".format(args[2]), db="{}".format(args[3]), charset="utf8")
 
