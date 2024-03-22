@@ -1,48 +1,53 @@
 #!/usr/bin/python3
 
-""" my module that link MySQLdb with python"""
-
+"""my module that link MySQLdb with python"""
 
 import MySQLdb
 import sys
 
-args = sys.argv
-conn = MySQLdb.connect(host="localhost", port=3306, user="{}".format(args[1]), passwd="{}".format(args[2]), db="{}".format(args[3]), charset="utf8")
+class Linker:
+  """link MySQLdb with python"""
 
-cur = conn.cursor()
+  def __init__():
+    args = sys.argv
+    conn = MySQLdb.connect(host="localhost", port=3306, user="{}".format(args[1]), passwd="{}".format(args[2]), db="{}".format(args[3]), charset="utf8")
 
-create_table = """
-CREATE DATABASE IF NOT EXISTS hbtn_0e_0_usa;
-USE hbtn_0e_0_usa;
-CREATE TABLE IF NOT EXISTS states ( 
-    id INT NOT NULL AUTO_INCREMENT, 
-    name VARCHAR(256) NOT NULL,
-    PRIMARY KEY (id)
-);
-"""
+    cur = conn.cursor()
 
-insert_into_table = """
-INSERT INTO states (name)
-VALUES
-("California"),
-("Arizona"),
-("Texas"),
-("New York"),
-("Nevada");
-"""
+    create_table = """
+    CREATE DATABASE IF NOT EXISTS hbtn_0e_0_usa;
+    USE hbtn_0e_0_usa;
+    CREATE TABLE IF NOT EXISTS states ( 
+        id INT NOT NULL AUTO_INCREMENT, 
+        name VARCHAR(256) NOT NULL,
+        PRIMARY KEY (id)
+    );
+    """
 
-retrive = """
-SELECT * FROM states
-ORDER BY id ASC;
-"""
-cur.execute(create_table)
-cur.execute(insert_into_table)
-cur.execute(retrive)
+    insert_into_table = """
+    INSERT INTO states (name)
+    VALUES
+    ("California"),
+    ("Arizona"),
+    ("Texas"),
+    ("New York"),
+    ("Nevada");
+    """
 
-states = cur.fetchall()
+    retrive = """
+    SELECT * FROM states
+    ORDER BY id ASC;
+    """
+    cur.execute(create_table)
+    cur.execute(insert_into_table)
+    cur.execute(retrive)
 
-for state in states:
-  print(state)
+    states = cur.fetchall()
 
-cur.close()
-conn.close()
+    for state in states:
+      print(state)
+
+    cur.close()
+    conn.close()
+if __name__ == "__main__":
+  obj = Linker()
