@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cursor = connection.cursor()
     my_select_query = """
             SELECT id, name FROM states
-            WHERE name = {}
+            WHERE name = '{}'
             ORDER BY id ASC;
         """.format(args[4])
 
