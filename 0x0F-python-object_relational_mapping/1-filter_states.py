@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """A module that link MySQLdb with python3"""
-
+import MySQLdb
+import sys
 
 if __name__ == "__main__":
-    import MySQLdb
-    import sys
     args = sys.argv
     connection_with_db = MySQLdb.connect(
         host="localhost",
