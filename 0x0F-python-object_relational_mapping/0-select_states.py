@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+""" my module that link MySQLdb with python"""
+
+
 import MySQLdb
 import sys
 
