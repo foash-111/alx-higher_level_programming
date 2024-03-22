@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     my_select_query = """
             SELECT * FROM states
-            WHERE name LIKE 'N%';
+            WHERE name LIKE N%;
         """
 
     data_base_delivery.execute(my_select_query)
