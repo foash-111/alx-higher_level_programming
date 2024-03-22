@@ -9,9 +9,9 @@ if __name__ == "__main__":
     connection_with_db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=args[1],
-        passwd=args[2],
-        db=args[3],
+        user="{}".format(args[1]),
+        passwd="{}".format(args[2]),
+        db="{}".format(args[3]),
         charset="utf8"
     )
     data_base_delivery = connection_with_db.cursor()
