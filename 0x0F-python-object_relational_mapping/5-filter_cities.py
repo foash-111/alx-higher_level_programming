@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     my_rows = cursor.fetchall()
 
-    print(my_rows)
+    print(str(my_rows))
 
     cursor.close()
     connection.close()
