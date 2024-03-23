@@ -30,7 +30,13 @@ if __name__ == "__main__":
 
     my_rows = cursor.fetchall()
 
-    print(str(my_rows))
+    string = ''
+    for i in range (0, len(my_rows)):
+        string += i
+        if i == len(my_rows) - 1:
+            break
+        string += ', '
+
 
     cursor.close()
     connection.close()
