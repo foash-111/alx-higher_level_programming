@@ -29,11 +29,10 @@ if __name__ == "__main__":
     cursor.execute(my_select_query)
 
     my_rows = cursor.fetchall()
-
+    
     string = ''
-    i = 0
-    for row in my_rows:
-        string += row[0]
+    for i in range(len(my_rows)):
+        string += my_rows[i]
         if i == len(my_rows) - 1:
             break
         string += ', '
