@@ -30,8 +30,7 @@ if __name__ == "__main__":
 
     my_rows = cursor.fetchall()
 
-    for row in my_rows:
-        print(row)
+    print(my_rows)
 
     cursor.close()
     connection.close()
