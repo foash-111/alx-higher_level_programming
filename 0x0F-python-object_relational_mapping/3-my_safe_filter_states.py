@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cursor = connection.cursor()
     if ';' in args[4]:
         raise MySQLdb.Error
-        
+
     my_select_query = """
             SELECT id, name FROM states
             WHERE name LIKE BINARY '{}'
