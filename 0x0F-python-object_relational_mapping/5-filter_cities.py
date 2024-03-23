@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     string = ''
     for i in range (0, len(my_rows)):
-        string += i
+        string += my_rows[i]
         if i == len(my_rows) - 1:
             break
         string += ', '
