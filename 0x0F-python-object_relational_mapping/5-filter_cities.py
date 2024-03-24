@@ -34,6 +34,6 @@ if __name__ == "__main__":
         if i == len(my_rows) - 1:
             break
         string += ', '
-
+    print(string)
     cursor.close()
     connection.close()
