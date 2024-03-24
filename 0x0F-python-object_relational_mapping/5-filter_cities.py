@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A module that link MySQLdb with python3"""
 
+import sqlalchemy
 
 import MySQLdb
 import sys
@@ -36,7 +37,6 @@ if __name__ == "__main__":
         if i == len(my_rows) - 1:
             break
         string += ', '
-        i += 1 
 
     cursor.close()
     connection.close()
