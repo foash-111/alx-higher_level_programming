@@ -16,16 +16,14 @@ if __name__ == "__main__":
         charset="utf8"
     )
     cursor = connection.cursor()
-    if ';' in args[4]:
-        raise MySQLdb.Error
 
     my_select_query = """
             SELECT id, name FROM states
-            WHERE name LIKE BINARY '{}'
+            WHERE name LIKE BINARY '%s'
             ORDER BY id ASC;
-        """.format(args[4])
+        """
 
-    cursor.execute(my_select_query)
+    cursor.execute(my_select_query, (args[4], ))
 
     my_rows = cursor.fetchall()
 
