@@ -20,9 +20,8 @@ if __name__ == "__main__":
     my_select_query = """
             SELECT cities.name FROM cities
             JOIN states ON states.id = cities.state_id
-            WHERE state.name = '{}'
             ORDER BY id ASC;
-        """.format(args[4])
+        """
 
     cursor.execute(my_select_query)
 
