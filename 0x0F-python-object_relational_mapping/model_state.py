@@ -24,17 +24,9 @@ Date: 2024-04-15
 """
 
 
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import  Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-import sys
 
-# Parse command-line arguments for database connection
-args = sys.argv
-
-# Create a SQLAlchemy engine with connection pooling and pre-ping enabled
-engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(args[1], args[2], args[3]), pool_pre_ping=True)
-
-# Define the base class for declarative model definitions
 Base = declarative_base()
 
 class State(Base):
@@ -48,6 +40,3 @@ class State(Base):
     __tablename__ = 'states'
     id = Column(Integer, autoincrement=True, primary_key=True)
     name = Column(String(128), nullable=False)
-
-# Create the 'states' table in the database
-Base.metadata.create_all(engine)
