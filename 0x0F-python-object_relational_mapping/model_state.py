@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 
-"""first step to orm using sqlalchemy"""
+"""
+first step to orm using sqlalchemy
+"""
 
 
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Sequence
+from sqlalchemy import Column, Integer, String
 import sys
 
 args = sys.argv
