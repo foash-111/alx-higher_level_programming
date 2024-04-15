@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 """first step to orm using sqlalchemy"""
 
 
