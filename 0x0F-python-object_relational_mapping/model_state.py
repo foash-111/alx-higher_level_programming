@@ -23,7 +23,7 @@ Author: Foash
 Date: 2024-04-15
 """
 
-import sqlalchemy
+
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 import sys
