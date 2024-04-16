@@ -17,7 +17,7 @@ if __name__ == "__main__":
     _Session = sessionmaker(bind=engine)
     session = _Session()
 
-    rows = session.query(State).all().\
+    rows = session.query(State).\
         filter(State.name.like('%ed%')).order_by(State.id)
 
     for row in rows:
