@@ -21,7 +21,8 @@ if __name__ == "__main__":
     session.add(Louis)
     session.commit()
 
-    first_louis = session.query(State).\
-        filter(State.name.like("Louisiana")).first()
-
-    print(first_louis.id)
+    rows = session.query(State).\
+        filter(State.name.like("Louisiana"))
+    for i in rows:
+        pass
+    print(i.id)
