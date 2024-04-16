@@ -21,8 +21,5 @@ if __name__ == "__main__":
     session.add(Louis)
     session.commit()
 
-    rows = session.query(State).\
-        filter(State.name.like("Louisiana"))
-    for i in rows:
-        pass
-    print(i.id)
+    rows_number = session.query(State).count()
+    print(rows_number)
