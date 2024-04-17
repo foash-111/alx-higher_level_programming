@@ -17,10 +17,12 @@ if __name__ == "__main__":
     _Session = sessionmaker(bind=engine)
     session = _Session()
 
-    deleted_A_states = session.query(State).filter(State.name.like('%a%')).all()
+    deleted_A_states = session.query(State).\
+        filter(State.name.like('%a%')).all()
 
     for state in deleted_A_states:
-        session.delete(state) # session.delete() only can delete one record a time 
+        session.delete(state)
+        # session.delete() only can delete one record a time
     session.commit()
 
     session.close()
