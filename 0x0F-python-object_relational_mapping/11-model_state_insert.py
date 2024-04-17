@@ -21,5 +21,4 @@ if __name__ == "__main__":
     session.add(Louis)
     session.commit()
 
-    rows_number = session.query(State).count()
-    print(rows_number)
+    print(Louis.id)
