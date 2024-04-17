@@ -22,3 +22,4 @@ if __name__ == "__main__":
     session.commit()
 
     print(Louis.id)
+    session.close()
