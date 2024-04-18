@@ -7,8 +7,8 @@ import class State and city and do quering with join on them
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
-from model_city import City
+from relationship_state import Base, State
+from relationship_city import City
 from sys import argv
 
 
@@ -22,28 +22,12 @@ if __name__ == "__main__":
     _Session = sessionmaker(bind=engine)
     session = _Session()
 
-    california = State(name="California")
-    session.add(california)
-    session.commit()
-    san = City(name="San Francisco", state_id=california.id)
-    session.add(san)
-    session.commit()
+    states = session.query(State).order_by(State.id).all()
 
-    joined_rows = session.query(State, City).filter(State.id == City.state_id)\
-        .order_by(City.id).all()
-
-    state_list = []
-    city_list = []
-    for row in joined_rows:
-        if row.City.name not in city_list:
-            city_list.append(row.City.name)
-        else:
-            break
-        current_state = "{}: {}".format(row.State.id, row.State.name)
-        if current_state not in state_list:
-            state_list.append(current_state)
-            print(current_state)
-
-        print("     {}: {}".format(row.City.id, row.City.name))
+    for state in states:
+        current_state = "{}: {}".format(state.id, state.name)
+        print(current_state)
+        for city in state.cities:
+            print("     {}: {}".format(city.id, city.name))
 
     session.close()
