@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+import class State and city and do quering with join on them
+"""
+
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
