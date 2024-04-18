@@ -22,7 +22,7 @@ if __name__ == "__main__":
     session = _Session()
 
     rows = session.query(State, City).filter(State.id == City.state_id)\
-    .order_by(City.id).all()
+        .order_by(City.id).all()
 
     for row in rows:
         print("{}: ({}) {}".format(row.State.name, row.City.id, row.City.name))
