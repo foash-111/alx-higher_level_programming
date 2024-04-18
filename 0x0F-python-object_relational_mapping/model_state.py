@@ -30,7 +30,7 @@ Date: 2024-04-15
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-
+from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
@@ -43,6 +43,8 @@ class State(Base):
         id (int): An auto-incrementing integer serving as the primary key.
         name (str): A string column that cannot be null.
     """
+
     __tablename__ = 'states'
     id = Column(Integer, autoincrement=True, primary_key=True)
     name = Column(String(128), nullable=False)
+    city = relationship("City", back_populates='state')
