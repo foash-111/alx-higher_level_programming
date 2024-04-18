@@ -28,6 +28,6 @@ if __name__ == "__main__":
         current_state = "{}: {}".format(state.id, state.name)
         print(current_state)
         for city in state.cities:
-            print("     {}: {}".format(city.id, city.name))
+            print("\t{}: {}".format(city.id, city.name))
 
     session.close()
