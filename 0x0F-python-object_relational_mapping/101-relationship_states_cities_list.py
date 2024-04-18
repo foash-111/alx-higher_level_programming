@@ -24,10 +24,9 @@ if __name__ == "__main__":
 
     states = session.query(State).order_by(State.id).all()
 
-    for state in states:
-        current_state = "{}: {}".format(state.id, state.name)
-        print(current_state)
-        for city in state.cities:
+    for my_state in states:
+        print( "{}: {}".format(my_state.id, my_state.name))
+        for city in my_state.cities:
             print("\t{}: {}".format(city.id, city.name))
 
     session.close()
