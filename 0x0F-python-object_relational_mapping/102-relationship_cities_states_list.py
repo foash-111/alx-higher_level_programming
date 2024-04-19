@@ -26,4 +26,5 @@ if __name__ == "__main__":
         .order_by(City.id).all()
 
     for row in rows:
-        print("{}: {} -> {}".format(row.City.id, row.City.name, row.State.name))
+        print("{}: {} -> {}".
+              format(row.City.id, row.City.name, row.State.name))
