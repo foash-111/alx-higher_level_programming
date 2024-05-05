@@ -1,3 +1,3 @@
 #!/bin/bash
 #Bash script that takes in a URL, sends a request to that URL, and displays the body of the response
-echo $(curl "$1")
+curl -s -o /dev/null -w "%{http_code}\n" "$1" | grep -q 200 && curl -s "$1"
