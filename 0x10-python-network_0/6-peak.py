@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+"""find the peak element in a list
+A peak element is an element that is strictly greater than its neighbors"""
+
+def find_peak(list_of_integers):
+    i = 0
+    if list_of_integers:
+        for i in range(len(list_of_integers)):
+            if i == 0 or i == len(list_of_integers):
+                pass
+            else:
+                if list_of_integers[i] >= list_of_integers[i - 1]\
+                and list_of_integers[i] >= list_of_integers[i + 1]:
+                    return list_of_integers[i]
+    else:
+        return "None"
