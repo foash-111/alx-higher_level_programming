@@ -11,7 +11,7 @@ if __name__ == "__main__":
             page = respons.read()
         print("Body response:")
         print("    - type:", type(page))
-        print("    - content:",page)
+        print("    - content:", page)
         print('    - utf8 content: OK')
         print(type(respons.headers))
     except urllib.error.URLError as e:

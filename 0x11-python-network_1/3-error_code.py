@@ -3,11 +3,12 @@
 and handle errors connections"""
 
 
-import urllib.request, urllib.parse
+import urllib.request
+import urllib.parse
 import sys
 
 if __name__ == "__main__":
-  
+
     req = urllib.request.Request(sys.argv[1])
     try:
         with urllib.request.urlopen(req) as respons:

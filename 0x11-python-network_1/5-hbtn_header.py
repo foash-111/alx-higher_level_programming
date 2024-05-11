@@ -6,9 +6,7 @@ import requests
 import sys
 
 if __name__ == "__main__":
-   
-    
-    response = requests.get(sys.argv[1])       
+    response = requests.get(sys.argv[1])
     page = response.text
     print(response.headers['X-Request-Id'])
     # print(type(respons.headers))

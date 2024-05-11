@@ -11,7 +11,7 @@ if __name__ == "__main__":
     else:
         q = ""
     response = requests.get("http://0.0.0.0:5000/search_user")
-    if response.status_code >= 400:     
+    if response.status_code >= 400:
         print("Error code:", response.status_code)
     # print(type(respons.headers))
     else:
@@ -20,5 +20,4 @@ if __name__ == "__main__":
         print(data)
 
 
-    
-#ssh -o PasswordAuthentication=yes <ssh-key>
+# ssh -o PasswordAuthentication=yes <ssh-key>
