@@ -12,7 +12,7 @@ if __name__ == "__main__":
         print("Body response:")
         print("    - type:", type(page))
         print("    - content:", page)
-        print('    - utf8 content: OK')
+        print('    - utf8 content:', page.decode('utf-8'))
         # print(type(respons.headers))
     except urllib.error.URLError as e:
         if hasattr(e, 'reason'):
