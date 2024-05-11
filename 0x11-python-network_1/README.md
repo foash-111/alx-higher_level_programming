@@ -11,3 +11,13 @@ In summary, if you need to customize the request (e.g., adding headers, changing
 recource:
 (https://docs.python.org/3/library/urllib.request.html)
 (https://docs.python.org/3/library/urllib.request.html)
+---------------------
+and what about this:
+ response = requests.get("https://alx-intranet.hbtn.io/status")
+ANSWER | PHIND INSTANT MODEL
+The line response = requests.get("https://alx-intranet.hbtn.io/status") uses the requests library to send a GET request to the specified URL and assigns the response to the variable response. This is a high-level, user-friendly way to make HTTP requests in Python, offering several advantages over using urllib directly:
+
+Simplicity: The requests library abstracts away many of the complexities involved in making HTTP requests, providing a simple and intuitive API. For example, to send a GET request, you simply call requests.get(url).
+Automatic Decoding: When you receive a response, requests automatically decodes the content to UTF-8, making it easier to work with text-based responses without needing to manually decode them.
+Error Handling: requests provides built-in error handling for common HTTP errors, making it easier to write robust code that can gracefully handle errors like timeouts, network issues, or invalid URLs.
+Support for JSON: requests makes it easy to work with JSON data. You can automatically convert the response content to a Python dictionary using .json().
