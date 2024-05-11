@@ -10,5 +10,5 @@ if __name__ == "__main__":
     # print(respons.headers)
     # print(type(respons.headers))
     print("Body response:")
-    print("    - type:", type(page))
-    print("    - content:", page)
+    print("\t- type:", type(page))
+    print("\t- content:", page)
