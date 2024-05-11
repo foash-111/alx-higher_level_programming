@@ -10,5 +10,5 @@ if __name__ == "__main__":
     if response.status_code >= 400:
         print("Error code:", response.status_code)
     else:
-        print('Index')
+        print(response.text)
     # print(type(respons.headers))
