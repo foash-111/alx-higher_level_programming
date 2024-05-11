@@ -16,6 +16,6 @@ if __name__ == "__main__":
         # print(type(respons.headers))
         print(page)
     except urllib.error.HTTPError as e:
-            print("Error code:", e.code)
+        print("Error code:", e.code)
     # except urllib.error.URLError as e:
-    #         print(e.reason)
+    # print(e.reason)
