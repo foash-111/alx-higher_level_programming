@@ -10,14 +10,20 @@ if __name__ == "__main__":
         q = sys.argv[1]
     else:
         q = ""
-    response = requests.get("http://0.0.0.0:5000/search_user")
+    response = requests.post("http://0.0.0.0:5000/search_user", data=q)
     if response.status_code >= 400:
         print("Error code:", response.status_code)
     # print(type(respons.headers))
     else:
-        data = response.json()
-        print(type(data))
-        print(data)
+        if response.headers.get('content-type').startswith('application/json'):
+            data = response.json()
+            if data.get('id') and data.get('name'):
+                print('[' + data['id'] + ']', data['name'])
+            else:
+                print("No result")
+        else:
+            print("Not a valid JSON")
+            data = response.text
 
 
 # ssh -o PasswordAuthentication=yes <ssh-key>

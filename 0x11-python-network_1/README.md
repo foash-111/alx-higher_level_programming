@@ -21,3 +21,22 @@ Simplicity: The requests library abstracts away many of the complexities involve
 Automatic Decoding: When you receive a response, requests automatically decodes the content to UTF-8, making it easier to work with text-based responses without needing to manually decode them.
 Error Handling: requests provides built-in error handling for common HTTP errors, making it easier to write robust code that can gracefully handle errors like timeouts, network issues, or invalid URLs.
 Support for JSON: requests makes it easy to work with JSON data. You can automatically convert the response content to a Python dictionary using .json().
+
+--------------------
+If the response is not in JSON format, you cannot use response.json() to parse it. Instead, you should use response.text to get the response content as a string. This is useful for responses that are plain text, HTML, XML, or any other format that is not JSON. Here's how you can handle both JSON and non-JSON responses:
+
+import requests
+
+# Make a request
+response = requests.get('https://example.com/api')
+
+# Check if the response is JSON
+if response.headers.get('Content-Type').startswith('application/json'):
+    # Parse the JSON response
+    # convert the response from json string representation into object like dictionary that can be dealed by python
+    data = response.json()
+    print(data)
+else:
+    # Handle non-JSON responses
+    print(response.text)
+This code first checks if the Content-Type header of the response starts with application/json, indicating that the response is in JSON format. If it is, it parses the response using response.json(). Otherwise, it prints the response content as a string using response.text. This approach allows you to handle both JSON and non-JSON responses appropriately.
