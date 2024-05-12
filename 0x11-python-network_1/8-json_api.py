@@ -10,7 +10,8 @@ if __name__ == "__main__":
         q = sys.argv[1]
     else:
         q = ""
-    response = requests.post("http://0.0.0.0:5000/search_user", data=q)
+    my_data = {'q': q}
+    response = requests.post("http://0.0.0.0:5000/search_user", data=my_data)
     if response.status_code >= 400:
         print("Error code:", response.status_code)
     # print(type(respons.headers))
