@@ -25,5 +25,4 @@ request('https://swapi-api.alx-tools.com/api/films/', (err, response, body) => {
 
     j = j + 1;
   }
-
 });
