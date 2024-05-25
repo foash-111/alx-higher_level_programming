@@ -21,5 +21,5 @@ request(args[2], (err, response) => {
     console.error(err);
     return;
   }
-  console.log(response.statusCode);
+  console.log('code: ', response.statusCode);
 });
