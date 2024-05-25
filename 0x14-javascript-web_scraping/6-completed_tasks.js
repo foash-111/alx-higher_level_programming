@@ -21,7 +21,7 @@ request(process.argv[2], (err, response, body) => {
       stringUserId = data[i].userId.toString();
       info[stringUserId] = count;
 
-      if (data[i + 1] && data[i + 1].userId !== data[i].userId) {
+      if (data[i + 1].userId !== data[i].userId) {
         count = 0;
       }
     }
