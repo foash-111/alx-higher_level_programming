@@ -18,10 +18,10 @@ request(process.argv[2], (err, response, body) => {
   while (data[i] !== undefined) {
     if (data[i].completed === true) {
       count++;
+      stringUserId = data[i].userId.toString();
+      info[stringUserId] = count;
 
-      if (data[i + 1] && data[i + 1].userId !== data[i].userId) {
-        stringUserId = data[i].userId.toString();
-        info[stringUserId] = count;
+      if (data[i + 1] && (data[i + 1].userId !== data[i].userId)) {
         count = 0;
       }
     }
