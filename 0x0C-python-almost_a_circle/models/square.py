@@ -8,11 +8,12 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """Square class"""
     def __init__(self, size, x=0, y=0, id=None):
+
         if type(size) is not int:
             raise TypeError('width must be an integer')
-        if self.size <= 0:
+        if size <= 0:
             raise ValueError("width must be > 0")
-        Rectangle.__init__(self, size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         return "[Square] ({}) {}/{} - {}"\
