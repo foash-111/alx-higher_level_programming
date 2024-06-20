@@ -100,6 +100,7 @@ class Rectangle(Base):
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """consider *args as incoming tuple and **kwargs as a dictionary"""
         if args:
             defualt_arguments = ("id", "width", "height", "x", "y")
             for key, value in zip(defualt_arguments, args):
