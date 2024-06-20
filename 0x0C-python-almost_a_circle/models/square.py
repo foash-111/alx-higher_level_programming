@@ -32,3 +32,14 @@ class Square(Rectangle):
 
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """consider *args as an incoming tuple and **kwargs as a dictionary"""
+        if args:
+            defualt_args = ("id", "size", "x", "y")
+
+            for key, value in zip(defualt_args, args):
+                setattr(self, key, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
