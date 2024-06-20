@@ -38,10 +38,9 @@ class Base:
             my_dict = i.to_dictionary()
             my_list.append(my_dict)
 
-        my_string = cls.to_json_string(my_list)
 
         with open("{}.json".format(cls.__name__), "w") as file:
             if list_objs:
-                dump(my_string, file)
+                dump(my_list, file)
             else:
                 dump("[]", file)
