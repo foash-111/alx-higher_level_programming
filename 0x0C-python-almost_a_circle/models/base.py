@@ -16,11 +16,11 @@ class Base:
             # == self.__class__.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    @staticmethod
-    def to_dictionary(self):
-        """retrun dict representation"""
-        return {"id": self.id, "width": self.width,
-                "height": self.height, "x": self.x, "y": self.y}
+    # @staticmethod
+    # def to_dictionary(self):
+    #     """retrun dict representation"""
+    #     return {"id": self.id, "width": self.width,
+    #             "height": self.height, "x": self.x, "y": self.y}
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -52,3 +52,20 @@ class Base:
             return loads(json_string)
         else:
             return []
+
+    # def update(self, *args, **kwargs):
+    #     """consider *args as an incoming tuple, **kwargs as a dictionary"""
+    #     if args:
+    #         defualt_arguments = ("id", "width", "height", "x", "y")
+    #         for key, value in zip(defualt_arguments, args):
+    #             setattr(self, key, value)
+    #     else:
+    #         for key, value in kwargs.items():
+    #             setattr(self, key, value)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """create an instance"""
+        dummy = cls(**dictionary)
+        dummy.update(**dictionary)
+        return (dummy)
