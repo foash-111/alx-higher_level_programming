@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """base class"""
 
-from json import dumps, dump
+from json import dumps, loads
 
 
 class Base:
@@ -44,3 +44,11 @@ class Base:
                 file.write(cls.to_json_string(my_list))
             else:
                 file.write("[]")
+
+    @staticmethod
+    def from_json_string(json_string):
+        """return string as a object"""
+        if json_string:
+            return loads(json_string)
+        else:
+            return []
