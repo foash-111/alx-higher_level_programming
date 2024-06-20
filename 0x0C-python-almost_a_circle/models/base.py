@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """base class"""
 
-import json
+from json import dumps
 
 class Base:
     """my base class"""
@@ -18,4 +18,4 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """convert list into json string representation"""
-        return json.dumps(list_dictionaries)
+        return dumps(list_dictionaries)
