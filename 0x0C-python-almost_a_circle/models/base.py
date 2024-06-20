@@ -34,9 +34,13 @@ class Base:
     def save_to_file(cls, list_objs):
         """itrate over list, convert to dict, append and dump into a file"""
         my_list = []
-        for i in list_objs:
-            my_dict = i.to_dictionary()
-            my_list.append(my_dict)
 
         with open("{}.json".format(cls.__name__), "w") as file:
-            file.write(cls.to_json_string(my_list))
+            if list_objs:
+                for i in list_objs:
+                    my_dict = i.to_dictionary()
+                    my_list.append(my_dict)
+
+                file.write(cls.to_json_string(my_list))
+            else:
+                file.write("[]")
