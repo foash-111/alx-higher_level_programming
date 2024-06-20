@@ -3,6 +3,7 @@
 
 from json import dumps
 
+
 class Base:
     """my base class"""
     __nb_objects = 0
