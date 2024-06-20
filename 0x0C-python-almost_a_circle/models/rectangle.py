@@ -98,3 +98,13 @@ class Rectangle(Base):
         """overriding the __str__ method"""
         return "[Rectangle] ({}) {}/{} - {}/{}"\
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        if args:
+            defualt_arguments = ("id", "width", "height", "x", "y")
+            for key, value in zip(defualt_arguments, args):
+                setattr(self, key, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+                
