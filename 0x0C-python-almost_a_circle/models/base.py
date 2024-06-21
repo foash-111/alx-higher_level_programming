@@ -105,7 +105,7 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """load a json string from a file and return it as an objects"""
-        file_path = '{}.json'.format(cls.__name__)
+        file_path = '{}.csv'.format(cls.__name__)
         if path.exists(file_path):
             with open('{}.csv'.format(cls.__name__)) as file:
                 my_string = file.read()
