@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """base class"""
 
-from json import dumps, loads
+from json import dumps, loads, load
 
 
 class Base:
@@ -67,5 +67,42 @@ class Base:
     def create(cls, **dictionary):
         """create an instance"""
         dummy = cls(**dictionary)
-        dummy.update(**dictionary)
         return (dummy)
+
+    @classmethod
+    def load_from_file(cls):
+        """load a json string from a file and return it as an objects"""
+
+        with open('{}.json'.format(cls.__name__)) as file:
+            my_string = file.read()
+            my_objects = cls.from_json_string(my_string)
+            mylist = []
+            for i in my_objects:
+                mylist.append(cls.create(**i))
+            return mylist
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """itrate over list, convert to dict, append and dump into a file"""
+        my_list = []
+
+        with open("{}.csv".format(cls.__name__), "w") as file:
+            if list_objs:
+                for i in list_objs:
+                    my_dict = i.to_dictionary()
+                    my_list.append(my_dict)
+
+                file.write(cls.to_json_string(my_list))
+            else:
+                file.write("[]")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """load a json string from a file and return it as an objects"""
+
+        with open('{}.csv'.format(cls.__name__)) as file:
+            my_string = file.read()
+            my_objects = cls.from_json_string(my_string)
+            mylist = []
+            for i in my_objects:
+                mylist.append(cls.create(**i))
