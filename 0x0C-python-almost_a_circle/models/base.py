@@ -2,6 +2,7 @@
 """base class"""
 
 from json import dumps, loads, load
+from os import path
 
 
 class Base:
@@ -74,13 +75,17 @@ class Base:
     def load_from_file(cls):
         """load a json string from a file and return it as an objects"""
 
-        with open('{}.json'.format(cls.__name__)) as file:
-            my_string = file.read()
-            my_objects = cls.from_json_string(my_string)
-            mylist = []
-            for i in my_objects:
-                mylist.append(cls.create(**i))
-            return mylist
+        file_path = '{}.json'.format(cls.__name__)
+        if path.exists(file_path):
+            with open('{}.json'.format(cls.__name__)) as file:
+                my_string = file.read()
+                my_objects = cls.from_json_string(my_string)
+                mylist = []
+                for i in my_objects:
+                    mylist.append(cls.create(**i))
+                return mylist
+        else:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -100,11 +105,14 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """load a json string from a file and return it as an objects"""
-
-        with open('{}.csv'.format(cls.__name__)) as file:
-            my_string = file.read()
-            my_objects = cls.from_json_string(my_string)
-            mylist = []
-            for i in my_objects:
-                mylist.append(cls.create(**i))
-            return mylist
+        file_path = '{}.json'.format(cls.__name__)
+        if path.exists(file_path):
+            with open('{}.csv'.format(cls.__name__)) as file:
+                my_string = file.read()
+                my_objects = cls.from_json_string(my_string)
+                mylist = []
+                for i in my_objects:
+                    mylist.append(cls.create(**i))
+                return mylist
+        else:
+            return []
