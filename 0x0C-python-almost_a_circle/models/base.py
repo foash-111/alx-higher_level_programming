@@ -107,3 +107,4 @@ class Base:
             mylist = []
             for i in my_objects:
                 mylist.append(cls.create(**i))
+            return mylist
