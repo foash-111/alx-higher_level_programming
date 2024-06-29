@@ -6,7 +6,7 @@
 import MySQLdb
 
 
-atef = MySQLdb.connect(
+elsta_atef = MySQLdb.connect(
     host="localhost",
     port=3306,
     user="foash",
@@ -14,7 +14,7 @@ atef = MySQLdb.connect(
     db="foash",
     charset="utf8")
 
-abdo = atef.cursor()
+abdo = elsta_atef.cursor()
 
 retrive = "SELECT * FROM tv_genres;"
 abdo.execute(retrive)
@@ -25,4 +25,4 @@ for state in states:
     print(state)
 
 abdo.close()
-atef.close()
+elsta_atef.close()

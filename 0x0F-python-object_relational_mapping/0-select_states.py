@@ -8,7 +8,7 @@ import sys
 
 if __name__ == "__main__":
     args = sys.argv
-    connection = MySQLdb.connect(
+    connection = MySQLdb.connect( # 1
         host="localhost",
         port=3306,
         user=args[1],
@@ -16,18 +16,18 @@ if __name__ == "__main__":
         db=args[3],
         charset="utf8")
 
-    cursor = connection.cursor()
+    cursor = connection.cursor() # 2
 
     query = """
     SELECT * FROM states
     ORDER BY id ASC;
     """
-    cursor.execute(query)
+    cursor.execute(query) # 3
 
-    states = cursor.fetchall()
+    states = cursor.fetchall() # 4
 
     for state in states:
         print(state)
 
-    cursor.close()
-    connection.close()
+    cursor.close() #5 close connection with tables
+    connection.close() # close connection with database

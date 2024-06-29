@@ -30,12 +30,12 @@ Date: 2024-04-15
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 
-Base = declarative_base()
+Base = declarative_base()  # 1 channel
 
 
-class State(Base):
+class State(Base):  # we can have more than destination.
     """
     Represents the 'states' table in the database.
 
@@ -45,6 +45,6 @@ class State(Base):
     """
 
     __tablename__ = 'states'
-    id = Column(Integer, autoincrement=True, primary_key=True)
+    id = Column(Integer, autoincrement=True, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
-    city = relationship("City", back_populates='state')
+    city = relationship("City", backref='states')

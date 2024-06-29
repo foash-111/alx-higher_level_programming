@@ -21,4 +21,4 @@ if __name__ == "__main__":
         filter(State.name.like('%a%')).order_by(State.id)
 
     for row in rows:
-        print(str(row.id) + ": " + row.name)
+       print(str(row.id) + ": " + row.name)
