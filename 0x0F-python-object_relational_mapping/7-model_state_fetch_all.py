@@ -24,27 +24,27 @@ if __name__ == "__main__":
     for row in rows:
         print(str(row.id) + ": " + row.name)
 
-
-
 # only 1 Base, only one channel to all destinations.
-# 
-#                                                 class table1(Base)     
+#
+#                                                 class table1(Base)
 #                                                /
-# 1------BASE = declarative_Base()-----> tables /-----calss table2(Base)   
+# 1------BASE = declarative_Base()-----> tables /-----calss table2(Base)
 #                                               \
-#                                                \                      
-#                                                 class table3(Base)        
-#                       
+#                                                \
+#                                                 class table3(Base)
+#
 
 
 # import BASE, classes Tables
 
-#     if __name__ == "__main__"                                    
-#-----------                           
-#  engine   | ---------->   Base.metadata.create_all(engin) -----> Session = sessionmaker(bind=engine)
-#-----------                                                            |
-#                                                                       v
-#                                                              seso = Session()     
-#                                                               |
-#                                                               v  
-#                                                      rows = seso.query(Table 'class')....         
+#     if __name__ == "__main__"
+# -----------
+#  engine   | ---------->   Base.metadata.create_all(engin)
+# -----------
+#           then we create session   -----> Session = sessionmaker(bind=engine)
+#                                             |
+#                                             v
+#                                     seso = Session()
+#                                     |
+#                                     v
+#                             rows = seso.query(Table 'class')....
